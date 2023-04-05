@@ -1,0 +1,15 @@
+C:\Doctor_db\git\bin\Debug\net6.0\git.exe
+C:\Doctor_db\git\bin\Debug\net6.0\git.deps.json
+C:\Doctor_db\git\bin\Debug\net6.0\git.runtimeconfig.json
+C:\Doctor_db\git\bin\Debug\net6.0\git.dll
+C:\Doctor_db\git\bin\Debug\net6.0\git.pdb
+C:\Doctor_db\git\obj\Debug\net6.0\git.csproj.AssemblyReference.cache
+C:\Doctor_db\git\obj\Debug\net6.0\git.GeneratedMSBuildEditorConfig.editorconfig
+C:\Doctor_db\git\obj\Debug\net6.0\git.AssemblyInfoInputs.cache
+C:\Doctor_db\git\obj\Debug\net6.0\git.AssemblyInfo.cs
+C:\Doctor_db\git\obj\Debug\net6.0\git.csproj.CoreCompileInputs.cache
+C:\Doctor_db\git\obj\Debug\net6.0\git.dll
+C:\Doctor_db\git\obj\Debug\net6.0\refint\git.dll
+C:\Doctor_db\git\obj\Debug\net6.0\git.pdb
+C:\Doctor_db\git\obj\Debug\net6.0\git.genruntimeconfig.cache
+C:\Doctor_db\git\obj\Debug\net6.0\ref\git.dll
