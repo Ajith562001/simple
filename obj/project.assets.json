@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Doctor_db\\git\\git.csproj",
+      "projectUniqueName": "C:\\Doctor_db\\simple\\git.csproj",
       "projectName": "git",
-      "projectPath": "C:\\Doctor_db\\git\\git.csproj",
+      "projectPath": "C:\\Doctor_db\\simple\\git.csproj",
       "packagesPath": "C:\\Users\\Ajith\\.nuget\\packages\\",
-      "outputPath": "C:\\Doctor_db\\git\\obj\\",
+      "outputPath": "C:\\Doctor_db\\simple\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ajith\\AppData\\Roaming\\NuGet\\NuGet.Config",

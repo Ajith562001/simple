@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sNv9LZiveoe5+tYETQ5rnMV0zEy3SiHNYO7l/vdEDJx6xdQSOmzGbl2Rkq9uDh/uXSWEgnT5PuOjfMRtImhqvw==",
+  "dgSpecHash": "yHkPf7PVEsSImlALOU9i46k+nZaTinjFLdROg78owR1wCOAW6N+dQPTKKMgZ7B8g6rp4btKRnH1nZOaPbdaCcA==",
   "success": true,
-  "projectFilePath": "C:\\Doctor_db\\git\\git.csproj",
+  "projectFilePath": "C:\\Doctor_db\\simple\\git.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
