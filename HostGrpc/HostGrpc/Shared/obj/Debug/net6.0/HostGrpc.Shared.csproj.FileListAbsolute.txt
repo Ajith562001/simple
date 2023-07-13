@@ -1,0 +1,12 @@
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\bin\Debug\net6.0\HostGrpc.Shared.deps.json
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\bin\Debug\net6.0\HostGrpc.Shared.dll
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\bin\Debug\net6.0\HostGrpc.Shared.pdb
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.csproj.AssemblyReference.cache
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.AssemblyInfoInputs.cache
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.AssemblyInfo.cs
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.dll
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\refint\HostGrpc.Shared.dll
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\HostGrpc.Shared.pdb
+C:\Users\ajith\source\repos\HostGrpc\HostGrpc\Shared\obj\Debug\net6.0\ref\HostGrpc.Shared.dll

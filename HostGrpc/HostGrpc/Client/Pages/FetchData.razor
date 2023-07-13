@@ -1,0 +1,167 @@
+﻿@page "/fetchdata"
+@using HostGrpc.Shared.Model
+@using HostGrpc.Shared.Service
+@using BlazorBootstrap;
+
+@using ProtoBuf.Grpc.Client
+@inject HttpClient Http
+@inject IserviceContract ser
+@inject NavigationManager uri;
+
+
+<PageTitle>Weather forecast</PageTitle>
+
+
+
+
+@if (datas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID </th>
+                <th>Name </th>
+                <th>Email</th>
+             
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var forecast in datas)
+            {
+                <tr>
+                    <td>@forecast.id</td>
+                    
+                    <td>@forecast.Name</td>
+                    <td>@forecast.Email</td>
+                    <td><button @onclick="@(()=> Delete(forecast))" class="btn btn-primary">Remove</button></td>
+                    <td>
+                       
+                    </td>
+                   <div>
+                        <Button Color="ButtonColor.Primary" @onclick="(()=>OnShowModalClick(forecast))">update</Button>
+                   </div>
+                </tr>
+            }
+            <Modal @ref="modal" title="Modal title" UseStaticBackdrop="true">
+                <BodyTemplate>
+                    <input @bind-value="modalPerson.id" type="text" placeholder="Id" id="Id">
+                    <input @bind-value="modalPerson.Name"  type="text" placeholder="Name" id="Name">
+                    <input @bind-value="modalPerson.Email"  type="text" placeholder="Email" id="Email">
+                    </BodyTemplate>
+                <FooterTemplate>
+                    <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Cancel</Button>
+                    <Button Color="ButtonColor.Primary" @onclick="Myupdate">Confirm</Button>
+                </FooterTemplate>
+            </Modal>
+        </tbody>
+    </table>
+    
+    
+    
+
+@*    <form onsubmit="msg()">
+         <input type="number" placeholder="ID" >
+         <input type="text" placeholder="Name">
+<input type="text" placeholder="Email">
+        <input type="submit" value="Click me" onclick="msg()">
+    </form>*@
+
+    <EditForm Model="person" OnSubmit="MySubmit">
+        <InputNumber @bind-Value=person.id DisplayName="ID"></InputNumber>
+        <InputText @bind-Value=person.Name DisplayName="Name"></InputText>
+        <InputText @bind-Value=person.Email DisplayName="Email" ></InputText>
+
+        <button class="btn btn-primary" type="submit"> Submit </button>
+    </EditForm>
+    <br />
+    <EditForm Model="person" OnSubmit="Myupdate">
+        <InputNumber @bind-Value=updateperson.id DisplayName="ID"></InputNumber>
+        <InputText @bind-Value=updateperson.Name DisplayName="Name"></InputText>
+        <InputText @bind-Value=updateperson.Email DisplayName="Email"></InputText>
+
+        <button class="btn btn-primary" type="submit"> Update </button>
+    </EditForm>
+}
+
+@code {
+    public List<Person> datas = new List<Person>() { };
+
+    public Person person { get; set; } = new();
+    public Person updateperson { get; set; } = new();
+    public Person modalPerson { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        datas = await ser.GetMyServices();
+        base.OnInitialized();
+    }
+
+    public async void MySubmit()
+    {
+        var data =  await ser.PostMyServices(person);
+        datas.Add(data);
+        person.id = 0;
+        person.Name = "";
+        person.Email = "";
+        StateHasChanged();
+        Console.WriteLine(data);
+    }
+
+    public async void Myupdate()
+    {
+        var data = await ser.PutMyServices(modalPerson);
+        // datas.Add(data);
+        //Person old = datas.Where(data => data.id == updateperson.id).SingleOrDefault();
+        for(int i=0; i< datas.Count ; i++)
+        {
+            if (datas[i].id == modalPerson.id)
+            {
+
+                datas[i].Name = modalPerson.Name;
+                datas[i].Email = modalPerson.Email;
+                Console.WriteLine(modalPerson.Name);
+
+            }
+        }
+        modalPerson.id = 0;
+        modalPerson.Name = "";
+        modalPerson.Email = "";
+      //  StateHasChanged();
+        Console.WriteLine(data);
+        StateHasChanged();
+        OnHideModalClick();
+    }
+
+    public async void Delete(Person person)
+    {
+        var data = await ser.DeleteMyServices(person);
+        datas.Remove(person);
+        StateHasChanged();
+    }
+
+   
+        private Modal modal;
+
+        private async Task OnShowModalClick(Person person)
+        {
+     
+            modalPerson.id = person.id;
+            modalPerson.Name = person.Name;
+            modalPerson.Email = person.Email;
+            await modal?.ShowAsync();
+
+
+    }
+
+        private async Task OnHideModalClick()
+        {
+            await modal?.HideAsync();
+        }
+    
+    
+}
